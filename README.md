@@ -8,10 +8,10 @@ Digital Bank is a sample application that was developed for exploratory purposes
 * The application allows the user to validate their profile through the DTP, once validated, the app allows the user to make Money transfers.
 * The main classes which show how to use the protocol are:
   * DTPRegistration.java (Performs the Registration process)
-  * DTPConfig.java (Contains some constants and stores the private key and clientId)
-  * WebUserController.validate() (Shows how to generate define claims in Json format)
-  * WebuserController.authenticateUser() (Shows how to receive the Code, process the JWS Object and validate the claims)
+  * DTPConfig.java (Contains some constants and stores the private key and ClientId)
+  * WebUserController.validate() (Shows how to easily define claims in Json format)
   * DTPService.java (Shows how to create, send the /initiate-authorize request and generate the redirect to the Authorization endpoint)
+  * WebuserController.authenticateUser() (This method receives the code in the url, then invokes the /token endpoint, process the JWS Object and finally it validates the claims)
   * DTPUtil.java (It's a small utility which helps to validate the assertion claims)
 
 ## Getting Started

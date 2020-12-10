@@ -4,7 +4,7 @@ Digital Bank is a sample application that was developed for exploratory purposes
 
 ## Using Santander Digital Trust protocol
 
-* This application shows how to use DTP, when application starts, it goes through the Registration process to get the ClientID, a private key is generated.
+* This application shows how to use DTP, when application starts, it retrieves the endpoints, then it goes through the Registration process to get the ClientID, and a private key is generated.
 * The application allows the user to validate their profile through the DTP, once validated, the app allows the user to make Money transfers.
 * The main classes which show how to use the protocol are:
   * DTPRegistration.java (Performs the Registration process)

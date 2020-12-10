@@ -59,7 +59,10 @@ public class Messages {
 	public static final String USER_POSTAL_CODE_REQUIRED= "Postal Code is required.";
 	public static final String USER_COUNTRY_REQUIRED	= "Country is required.";
 	public static final String USER_PROFILE_UPDATED		= "Profile Updated Successfully.";
-	
+
+	//DTP Profile verification
+	public static final String USER_PROFILE_VERIFIED_SUCCESS	= "Congratulations, your user profile has been SUCCESSFULLY verified with Santander DTP 🎉🎊";
+
 	// Account
 	public static final String ACCT_NAME_REQ			= "Account Name is required.";
 	public static final String ACCT_TYPE_REQ			= "Account Type Code is required.";

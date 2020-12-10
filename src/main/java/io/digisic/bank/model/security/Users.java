@@ -53,6 +53,7 @@ public class Users implements UserDetails {
 	@Pattern(regexp = Patterns.USER_PASSWORD, message = Messages.USER_PASSWORD_FORMAT)
 	private String password;
 
+	private boolean verified = false;
 	private boolean enabled = true;
 	private boolean accountNonExpired = true;
 	private boolean accountNonLocked = true;
@@ -79,6 +80,14 @@ public class Users implements UserDetails {
 		}
 		LOG.debug("getting notifications which has size " + notifications.size());
 		return notifications;
+	}
+
+	public boolean isVerified() {
+		return verified;
+	}
+
+	public void setVerified(boolean verified) {
+		this.verified = verified;
 	}
 
 	public void setNotifications(List<Notification> notifications) {
@@ -230,6 +239,7 @@ public class Users implements UserDetails {
 		user += "\nUser Name:\t\t" + this.getUsername();
 		user += "\nPassword:\t\t" + this.getPassword();
 		user += "\nEnabled:\t\t" + this.isEnabled();
+		user += "\nVerified:\t\t" + this.isVerified();
 		user += "\nNon Locked:\t\t" + this.isAccountNonLocked();
 		user += "\nNon Expired:\t\t" + this.isAccountNonExpired();
 		user += "\nCredentials Non Expired:" + this.isCredentialsNonExpired();

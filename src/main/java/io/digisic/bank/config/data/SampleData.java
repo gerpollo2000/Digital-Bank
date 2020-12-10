@@ -35,12 +35,13 @@ public class SampleData implements CommandLineRunner, Ordered {
 	@Autowired
 	private AccountService accountService;
 	
-	private static String SMPL_MALE_EMAIL 				= "jsmith@demo.io";
+	private static String SMPL_MALE_EMAIL 				= "t1@test.com";
 	private static String SMPL_FEMALE_EMAIL 			= "nsmith@demo.io";
-	private static String SMPL_COMMON_PASSWORD 			= "Demo123!";
-	private static String SMPL_MALE_FIRST_NAME			= "Josh";
+	//private static String SMPL_COMMON_PASSWORD 			= "Demo123!";
+	private static String SMPL_COMMON_PASSWORD 			= "123";
+	private static String SMPL_MALE_FIRST_NAME			= "Pablo";
 	private static String SMPL_FEMALE_FIRST_NAME		= "Nicole";
-	private static String SMPL_COMMON_LAST_NAME			= "Smith";
+	private static String SMPL_COMMON_LAST_NAME			= "Luna";
 	private static String SMPL_JOINT_CHECKING			= "Family Checking";
 	private static String SMPL_JOINT_SAVINGS			= "Family Savings";
 	private static String SMPL_PERSONAL_SAVINGS			= "Personal Savings";
@@ -69,9 +70,11 @@ public class SampleData implements CommandLineRunner, Ordered {
 			// Common Sample User Data
 			String street = faker.address().streetAddress();
 			String city = faker.address().city();
-			String zip = faker.address().zipCode().split("-")[0];
+			//String zip = faker.address().zipCode().split("-")[0];
+			String zip = "123121";
 			String state = faker.address().stateAbbr();
-			String homePhone = faker.numerify("###-###-####");
+			//String homePhone = faker.numerify("###-###-####");
+			String homePhone = "+44427444444";
 			
 			// ******************************************************************
 			// Male User
@@ -97,7 +100,7 @@ public class SampleData implements CommandLineRunner, Ordered {
 			maleProfile.setDob(faker.date().birthday());
 			maleProfile.setSsn(maleSsn);
 			maleProfile.setAddress(street);
-			maleProfile.setCountry("US");
+			maleProfile.setCountry("Spain");
 			maleProfile.setLocality(city);
 			maleProfile.setPostalCode(zip);
 			maleProfile.setRegion(state);

@@ -15,7 +15,7 @@
 	
 		<header th:replace="common/menus :: rp-header"/>
 		
-		<div th:replace="common/menus :: rp-breadcrumbs (pageTitle='VISA Transfer')"/>
+		<div th:replace="common/menus :: rp-breadcrumbs (pageTitle='Money transfer')"/>
     
     	<!-- Page Content Begin -->
     
@@ -26,15 +26,41 @@
                   		<div class="col-lg-12">
                     		<div class="card">
                         		<div class="card-header bg-flat-color-1">
-                            		<strong class="card-title text-white">Direct Payment to VISA</strong>
+                            		<strong class="card-title text-white">Transfer details</strong>
                         		</div>
 					
 									<form class="visa-form" th:action="@{/external/xfer-visa-process}" method="post">
                              		
                              			<div class="card-body card-block">
+
+
+
+											<div class="form-group text-left">
+												<div class="sufee-alert alert with-close alert-success alert-dismissible fade show" th:if="${successMsg}">
+													<span class="badge badge-pill badge-success">Success</span>
+													<span th:text="${successMsg}"></span>
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+											</div>
+											<div class="form-group text-left">
+												<div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" th:if="${errorMsg}">
+													<span class="badge badge-pill badge-danger">Error</span>
+													<span th:text="${errorMsg}"></span>
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+											</div>
+
+
+
+
+
                              				<div class="row form-group">
                              					<div class="col col-sm-4">
-	                            					<label for="extAccount" class="form-control-label"><strong>VISA Account Number</strong></label> 
+	                            					<label for="extAccount" class="form-control-label"><strong>Transfer from</strong></label>
                                						<select class="form-control" id="extAccount" name="extAccount">
 					                                	<option class="text-light"value="">---------- Select Account -----------</option>
 				  										<option value="ABCD1234ABCD123">------ Account Ending in 123  ------</option>
@@ -42,17 +68,45 @@
   													</select>
   												</div>
   											</div>
-  									
+
+											<div class="row form-group">
+												<div class="col col-sm-4">
+													<label for="extAccount" class="form-control-label"><strong>Transfer to</strong></label>
+													<select class="form-control" id="extAccount2" name="extAccount">
+														<option class="text-light"value="">---------- Select Account -----------</option>
+														<option value="ABCD1234ABCD123">------ Gerry Account  ------</option>
+														<option value="ABCD1234ABCD456">------ Tiffany Account  ------</option>
+													</select>
+												</div>
+											</div>
+
 	                               			<div class="row form-group">
 		                        				<div class="col col-sm-4">
 					                				<label class="form-control-label"><strong>Transfer Amount</strong></label>
 					                					<input id="extAmount" name="extAmount" type="text" class="form-control" required th:pattern="${patternTransactionAmount}">
-					                					<small class="form-text text-muted">Amount to be transferred to VISA account</small>
+					                					<small class="form-text text-muted">Amount to be transferred</small>
 					                 			</div>
 		                        			</div>
+
+											<div class="row form-group">
+												<div class="col col-sm-4">
+													<label class="form-control-label"><strong>Numeric reference</strong></label>
+													<input id="reference" name="extAmount" type="text" class="form-control">
+													<small class="form-text text-muted"></small>
+												</div>
+											</div>
+
+											<div class="row form-group">
+												<div class="col col-sm-4">
+													<label class="form-control-label"><strong>Item/Description</strong></label>
+													<input id="description" name="extAmount" type="text" class="form-control">
+													<small class="form-text text-muted"></small>
+												</div>
+											</div>
 										</div> <!-- End Card Body -->
 										<div class="card-footer">
-	                     	    			<button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-dot-circle-o"></i> Submit to VISA</button>
+											<p class="text-muted m-b-15">You can do transfers ONLY if your profile is Verified</p>
+	                     	    			<button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-dot-circle-o"></i> Submit </button>
 	                     				</div> <!-- End Card Footer -->	
                             		</form>
                      		

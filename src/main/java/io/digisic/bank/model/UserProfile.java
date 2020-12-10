@@ -84,7 +84,7 @@ public class UserProfile {
 	@NotEmpty (message=Messages.USER_COUNTRY_REQUIRED)
 	private String country;
 	
-	
+	private boolean verified;
 	
 	// default constructor
 	public UserProfile () {}
@@ -375,7 +375,13 @@ public class UserProfile {
 		this.postalCode = postalCode;
 	}
 
+	public boolean isVerified() {
+		return verified;
+	}
 
+	public void setVerified(boolean verified) {
+		this.verified = verified;
+	}
 
 	/**
 	 * @return the country
@@ -415,6 +421,7 @@ public class UserProfile {
 	    userProfile += "\nRegion:\t\t\t" 		+ this.getRegion();
 	    userProfile += "\nPostal Code:\t\t" 	+ this.getPostalCode();
 	    userProfile += "\nCountry:\t\t" 		+ this.getCountry();
+		userProfile += "\nVerified:\t\t" 		+ this.isVerified();
 
 	    userProfile += "\n*******************************************\n";
 	    

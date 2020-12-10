@@ -226,7 +226,29 @@ public class UserService {
 	
 		return user;
 	}
-	
+
+	/**
+	 * Mark the profile as verified with Santander DTP
+	 * @param user
+	 * @return
+	 */
+	public Users verifyProfile(Users user) {
+
+		UserProfile up = user.getUserProfile();
+
+		LOG.debug("Verifying User Profile: " + user.toString());
+
+		// Set updated fields into actual user profile
+		up.setVerified(true);
+		user.setVerified(true);
+
+		user = save(user);
+
+		LOG.debug("Verified User Profile: " + user.getUserProfile().toString());
+
+		return user;
+	}
+
 	/*
 	 * Checks whether the provided password matches the password stored
 	 * with the User object.

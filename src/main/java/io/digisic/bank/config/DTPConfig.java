@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class DTPConfig {
 
     //public static final String appBaseUrl = "http://localhost:8080/bank";
-    public static final String appBaseUrl = "http://dtpbank.co:8080/bank";
+    public static final String appBaseUrl = "http://dtpbank.co:8080";
     public static final String redirectURI = appBaseUrl + Constants.URI_USER + Constants.URI_USR_PROFILE_AUTHENTICATE;
     private String issuer = "https://op.iamid.io";
     private String kid = "DigitalBankKey";

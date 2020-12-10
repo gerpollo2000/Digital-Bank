@@ -2,6 +2,18 @@
 
 Digital Bank is a sample application that was developed for exploratory purposes to examine development frameworks and techniques. The application is an example online digital banking application with integrations into other services.
 
+## Using Santander Digital Trust protocol
+
+* This application shows how to use DTP, when application starts, it goes through the Registration process to get the ClientID, a private key is generated.
+* The application allows the user to validate their profile through the DTP, once validated, the app allows the user to make Money transfers.
+* The main classes which show how to use the protocol are:
+  * DTPRegistration.java (Performs the Registration process)
+  * DTPConfig.java (Contains some constants and stores the private key and clientId)
+  * WebUserController.validate() (Shows how to generate define claims in Json format)
+  * WebuserController.authenticateUser() (Shows how to receive the Code, process the JWS Object and validate the claims)
+  * DTPService.java (Shows how to create, send the /initiate-authorize request and generate the redirect to the Authorization endpoint)
+  * DTPUtil.java (It's a small utility which helps to validate the assertion claims)
+
 ## Getting Started
 
 * Using either an Eclipse IDE or IntelliJ, import the source code as an Existing Maven Project. 
@@ -54,8 +66,8 @@ Digital Bank can be deployed as a single standalone application service or be de
 
 * Web Interface @ http://{hostname}:{port}/bank
   * Sample user data is created when the application is started. User credentials for these users are as follows:
-    * jsmith@demo.io/Demo123!
-    * nsmith@demo.io/Demo123!
+    * t1@test.com/123
+    * nsmith@demo.io/123
 * Swagger UI @ http://{hostname}:{port}/bank/swagger-ui.html
   * The API Admin user credentials are as follows:
     * admin@demo.io/Demo123!

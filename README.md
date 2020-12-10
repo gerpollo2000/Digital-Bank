@@ -89,6 +89,8 @@ Digital Bank can be deployed as a single standalone application service or be de
 * [JUnit 5](https://junit.org/junit5/) - Unit Testing Framework
 * [CodeSV](http://codesv.io/) - Unit Testing with Mock Services
 * [BlazeMeter](https://www.blazemeter.com/) - Functional / Performance API & UI Testing Services
+* [Nimbus JOSE + JWT](https://connect2id.com/products/nimbus-jose-jwt) - Library for working with JWS, JWK, JWE and JWT
+* [Nimbus OAuth 2.0 SDK](https://connect2id.com/products/nimbus-oauth-openid-connect-sdk) - Library for developing OAuth 2.0 and OpenID Connect clients
 
 
 ## Authors

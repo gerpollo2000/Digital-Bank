@@ -18,13 +18,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<!--repositories>
+	<repositories>
 		<repository>
 			<id>bintray-ca-sv</id>
 			<name>bintray-ca</name>
 			<url>http://ca.bintray.com/sv</url>
 		</repository>
-	</repositories-->
+	</repositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -159,10 +159,6 @@
       		<groupId>org.springframework.boot</groupId>
       		<artifactId>spring-boot-starter-artemis</artifactId>
    		</dependency>
-		<!--dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-oauth2-client</artifactId>
-		</dependency-->
 		<dependency>
 			<groupId>com.nimbusds</groupId>
 			<artifactId>oauth2-oidc-sdk</artifactId>
